@@ -13,7 +13,7 @@ function NavBar( { nameCategories, children } ){
 
     return(
         <header className='nb-header'>
-            <a href="#" className='nb-title'><h1>Comm-E</h1></a>
+            <a href="#" className='nb-title'><h1>{children}</h1></a>
             <ul className='nb-components'>
                 {catsComponents}
             </ul>

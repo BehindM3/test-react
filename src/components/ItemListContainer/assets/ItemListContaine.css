@@ -9,6 +9,7 @@
     background-color: #fff;
     margin-top: 5px;
     width: 100%;
+    overflow: hidden;
 }
 
 .hd-ilc h2{

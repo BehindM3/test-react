@@ -30,5 +30,6 @@ export const articulos = [
         nameItem: "Headset",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIlEZEVrPrjiheLGkl5nxfmKcVkgROjBiZCA&s",
         price: 95.00
-    }
+    },
+    
 ];

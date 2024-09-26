@@ -14,7 +14,7 @@
     position: absolute;
     right: 8px;
     top: 8px;
-    z-index: 2;
+    z-index: 3;
     transition: all .6s ease;
 }
 
@@ -37,7 +37,8 @@
     top: 0px;
     width: 200px;
     height: 100%;
-    background-color: #ffffffa2;
+    background-color: #e7e7e7;
+    z-index: 2;
     transition: all .6s ease;
 }
 

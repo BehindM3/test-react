@@ -1,5 +1,5 @@
 import './assets/NavBar.css'
-
+import Cart from "../Cart/Cart"
 
 function NavBar( { nameCategories, children } ){
 
@@ -12,12 +12,15 @@ function NavBar( { nameCategories, children } ){
     })
 
     return(
-        <header className='nb-header'>
-            <a href="#" className='nb-title'><h1>{children}</h1></a>
-            <ul className='nb-components'>
-                {catsComponents}
-            </ul>
-        </header>
+        <>
+            <header className='nb-header'>
+                <a href="#" className='nb-title'><h1>{children}</h1></a>
+                <ul className='nb-components'>
+                    {catsComponents}
+                </ul>
+            </header>
+            <Cart></Cart>
+        </>
     );
 }
 

@@ -16,6 +16,7 @@
     color: #222;
     text-align: center;
     animation: translation 12s infinite linear;
+    white-space: nowrap;
 }
 
 @keyframes translation{

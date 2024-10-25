@@ -1,8 +1,24 @@
-# React + Vite
+<h1 align="center" font-size="18px"> Proyecto: Curso react </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p >Este proyecto tiene como objetivo diseñar un sitio web, mas precisamente un e-Commerce de productos tecnologicos, por medio del uso de <strong>React</strong> como libreria principal implementada con Vite.</p>
 
-Currently, two official plugins are available:
+<h2>Diseño: </h2> 
+<ul>
+  <li><strong>Home:</strong> <p>Al cual podremos acceder por medio del icono o nombre del sitio (COM-E), donde se vistaran todos los productos sin ningun tipo de filtro.</p></li>
+  
+  <li><strong>Headset, Mouse, Keyboards:</strong> <p>Son tres (3) rutas distintas, cada una aplicando el filtro correspondiente a los productos, para que asi se puedan listar los que corresponden a esa categoria.</p></li>
+  
+  <li><strong>More Detail:</strong> <p>Ruta encargada de redirigirnos a la informacion detallada del producto seleccionado, a esta ruta se accede desde el Link asociado debajo de cada Item en la card correspondiente a cada uno. <strong>Esta ruta nos mostrara una pantalla de carga.</strong></p></li>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <li><strong>Rutas error:</strong> <p>Rutas encargadas de captar errores, solo existen dos casos:
+    <ul>
+      <li><p>
+        400-Bad Request: Se muestra cuando se intenta de ingresar a la ruta "/detail/:idProduct", con un idProduct no valido.
+      </p></li>
+      <li><p>
+        404-Bad Request: Se seteo bajo el Link "*".
+      </p></li>
+    </ul>
+  </p></li>
+  
+</ul>

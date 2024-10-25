@@ -1,0 +1,34 @@
+.ct-error{
+
+    height: calc(100dvh - 48px);
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    & img{
+        color: #fff;
+        animation: rotate 3s ease infinite;
+    
+    }
+    
+    & h2 {
+        font-weight: 800;
+        font-size: 4rem;
+
+        .numberError{
+            font-size: 5rem;
+        }
+    }
+}
+
+@keyframes rotate {
+    0%, 100%{
+        transform: rotate(-30deg);
+    }   
+    50%{
+        transform: rotate(30deg);
+    }   
+}

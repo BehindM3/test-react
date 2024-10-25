@@ -1,0 +1,114 @@
+.main-ilc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hd-ilc{
+    background-color: #fff;
+    margin-top: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hd-ilc h2{
+    color: #222;
+    text-align: center;
+    animation: translation 12s infinite linear;
+    white-space: nowrap;
+}
+
+@keyframes translation{
+    0% {
+        transform: translateX(-80%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.container-ilc{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+.item-ilc{
+    height: 350px;
+    width: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    border: solid #fff .5px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 5px #fff;
+}
+
+.img-ilc{
+    height: 150px;
+    width: 150px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 18px;
+    background-color: #fff;
+}
+
+.itemName-ilc {
+    width: 150px;
+}
+
+.info-ilc{
+    width: 75%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;   
+    align-items: center;
+    gap: 5px;
+
+    .itemPrice{
+        font-size: 18px;
+        font-weight: bold;
+        color: #2a7fc4;
+    }
+    
+    .detailButton-ilc{
+        width: 70%;
+        height: 25px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        background-color: #242424;
+        border: solid #2a7fc4 .5px;
+        border-radius: 20px;
+
+        font-size: .8em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+        transition: all .3s ease-out;
+        backface-visibility: hidden;
+        will-change: transform;
+        transform: translateZ(0);
+
+        &:hover{
+           border: solid 0.2px #2a7fc4; 
+           background-color: #2a7fc463;
+        }
+
+        &:active{
+            transform: scale(0.9);
+        }
+
+    }
+}
+
+

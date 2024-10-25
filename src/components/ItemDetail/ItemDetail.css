@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.cont-details{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    min-height: calc(100dvh - 48px);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.img-section{
+    min-height: 60dvh;
+    margin-top: 25px;
+    gap: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-aside{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    & img {
+        height: 120px;
+        width: 120px;
+        object-fit: contain ;
+        background-color: #fff;
+        border: solid 1px #fff;
+        border-radius: 999px;
+        cursor: pointer;
+    }
+}
+
+.img-focus{
+    position: relative;
+    width: min(380px, 90%);
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+
+    & img {
+        height: 380px;
+        width: min(380px, 100%);
+        object-fit: contain ;
+        border-radius: 15px;
+        background-color: #fff;
+    }
+}
+
+
+.info-section{
+    width: 400px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    gap: 30px;
+
+    & h3{
+        font-weight: 800;
+        font-size: 2rem;
+    }
+
+    & p{
+        width: 90%;
+    }
+
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.btn-addCart{
+    width: 193px;
+    position: relative;
+    color: #fff;
+    padding: 15px 20px;
+    border: solid #fff 2px;
+    border-radius: 15px;
+    background-color: #000000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    margin: 2px;
+
+    
+    &::after , &::before{
+        content: "";
+        position: absolute;
+        width: 195px;
+        height: 55px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+        border-radius: 15px;
+        z-index: -1;
+        animation: spin 2.5s linear infinite;
+    }
+    
+    
+    &::before{
+        filter: blur(1.5rem);
+        opacity: 0.5;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+    
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg
+    }
+    to{
+        --angle:360deg
+    }
+}

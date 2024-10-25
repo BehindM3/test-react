@@ -1,5 +1,5 @@
-import cartIcon from "./assets/cart.svg"
-import './assets/Cart.css'
+import cartIcon from "/cart.svg"
+import './Cart.css'
 import { useId } from 'react'
 
 function Cart({ }){

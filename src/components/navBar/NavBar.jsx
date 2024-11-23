@@ -1,4 +1,4 @@
-import Cart from '../cart/Cart.jsx'
+import Cart from '../Cart/Cart.jsx'
 import CategoriesNav from './CategoriesNav.jsx';
 import './NavBar.css'
 

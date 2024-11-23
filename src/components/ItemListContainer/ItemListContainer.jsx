@@ -1,7 +1,8 @@
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getAll } from "../../utils/utils.js";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import db from "../../db/db.js";
 import './ItemListContaine.css'
 
 function ItemListContainer({ meeting }){
@@ -9,24 +10,49 @@ function ItemListContainer({ meeting }){
     const[ listProduct, setListProduct ] = useState([]);
     const { category } = useParams();
     
-    useEffect(()=>{
-    
-        try{
-            let products =  getAll();
+    const getProducts = () => {
+        const productsRef = collection(db, "products");
 
-            if( !category ){
-                setListProduct(products);
+        getDocs(productsRef)
+        .then( dataDB => {
+
+            const data = dataDB.docs.map( productDB => {
+                return { id: productDB.id, ...productDB.data() }
+            })
+
+            setListProduct(data);
+        })
+    };
+
+    const getProductByCategory = () => {
+        const productRef = collection(db, "products");
+        const queryFilter = query( productRef, where( "category", "==", category) );
+
+        getDocs(queryFilter)
+        .then( dataDB => {
+
+            const data = dataDB.docs.map( productDB => {
+                return { id: productDB.id, ...productDB.data() }
+            })
+
+            setListProduct(data);
+        });
+    }
+
+    useEffect(()=>{
+        try{
+
+            if(!category){
+                getProducts();
             }
             else{
-                const filterProduct = products.filter( product => product.category === category );
-                setListProduct(filterProduct);
+                getProductByCategory();
             }
-        
+
         }catch(err){
             console.log("No pudieron recuperarse los productos requqeridos: ", err);
-        
+
         }
-        
     }, [category]);
 
     

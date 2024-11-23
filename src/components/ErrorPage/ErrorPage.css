@@ -1,6 +1,6 @@
 .ct-error{
 
-    height: calc(100dvh - 48px);
+    min-height: calc(100dvh - 48px);
     width: 100%;
     display: flex;
     flex-flow: column nowrap;

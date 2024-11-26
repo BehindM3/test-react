@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { cartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartAside = () => {
 
-    const { cart } = useContext(cartContext);
+    const { cart, removeProductFromCart } = useContext(cartContext);
 
     const cartProducts = cart.map(product => {
         return (
@@ -13,7 +14,7 @@ const CartAside = () => {
                     <p className="prod-name">{product.nameItem}</p>
                     <p className="prod-price">{product.quantity} x {product.price}$</p>
                 </div>
-                <button className="dlt-prod-cart"></button>
+                <button className="dlt-prod-cart" onClick={() => removeProductFromCart(product.id)}></button>
             </article>
         );
     })
@@ -21,13 +22,13 @@ const CartAside = () => {
     return (
         <section className="cart-display">
             <header className="cart-title">
-                <p>Tu carrito</p>
+                <p>Your Cart</p>
             </header>
             <main className="main-cart">
                 {cartProducts}
             </main>
             <footer className="footer-cart">
-                <button className="buy-btn">Buy</button>
+                <Link to={'/cart'} className="buy-btn">Continue</Link>
             </footer>
         </section>
     )

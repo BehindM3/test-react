@@ -1,22 +1,20 @@
 import { useState, useContext } from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import { cartContext } from "../../Context/CartContext";
+import { toast } from 'react-toastify';
+import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css';
 
 function ItemDetail({ product }) {
 
     const { addProductToCart } = useContext(cartContext);
-
     const [imgFocus, setImgFocus] = useState(product.img[0]);
     const imgsAside = product.img.filter(img => img !== imgFocus)
 
-    /* function handleClickImgs() {
-
-    }; */
 
     const addProduct = (count) => {
-        const newProduct = {...product, quantity: count}
-        addProductToCart( newProduct )
+        const newProduct = {...product, quantity: count};
+        addProductToCart( newProduct );
+        toast.success("Product added correctly");
     };
 
     return (

@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
+import { toast } from 'react-toastify';
 
-//Creamos el contexto del Carrito
 const cartContext = createContext();
 
 
@@ -31,10 +31,12 @@ const CartProvider = ({ children }) => {
         
         cart.splice(index, 1);
         setCart([...cart]);
+        toast.success("Product deleted correctly.");
     };
 
     const emptyCart = () => {
         setCart([]);
+        toast.success("Cart deleted.");
     }
 
     const totalQuantity = () => {
@@ -42,8 +44,13 @@ const CartProvider = ({ children }) => {
         return total;
     }
 
+    const totalCartPrice = () => {
+        const total = cart.reduce( (acc, productCart) => acc + (productCart.quantity * productCart.price.toFixed(2)) ,0);
+        return total;
+    }
+
     return (
-        <cartContext.Provider value={{ cart, addProductToCart, removeProductFromCart, emptyCart, totalQuantity}}>
+        <cartContext.Provider value={{ cart, addProductToCart, removeProductFromCart, emptyCart, totalQuantity, totalCartPrice}}>
             {children}
         </cartContext.Provider>
     );

@@ -155,4 +155,16 @@
 
         }
     }
+
+    .totalPrice{
+        width: calc(90dvw*0.7);
+        display: flex;
+        justify-content: flex-end;
+        
+        & p{
+            text-align: start;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+    }
 }
